@@ -2,11 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentValidation" Version="10.3.3" />
+    <ProjectReference Include="..\SSContainer.Domain\SSContainer.Domain.csproj" />
   </ItemGroup>
 
 </Project>
