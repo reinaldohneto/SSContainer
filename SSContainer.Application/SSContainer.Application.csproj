@@ -5,7 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SSContainer.Application.DTO\SSContainer.Application.Models.csproj" />
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SSContainer.Application.Models\SSContainer.Application.Models.csproj" />
     <ProjectReference Include="..\SSContainer.Domain.Core\SSContainer.Domain.Core.csproj" />
   </ItemGroup>
 

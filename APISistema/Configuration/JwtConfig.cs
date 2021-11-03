@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace SSContainer.Infrastructure.Repository.Repositorys
+namespace APISistema.Configuration
 {
-    public class RepositoryBase
+    public class JwtConfig
     {
+        public string Secret { get; set; }
     }
 }

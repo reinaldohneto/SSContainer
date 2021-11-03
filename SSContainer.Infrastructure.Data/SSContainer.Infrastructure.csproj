@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.10">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -17,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SSContainer.Application.Models\SSContainer.Application.Models.csproj" />
     <ProjectReference Include="..\SSContainer.Domain.Core\SSContainer.Domain.Core.csproj" />
     <ProjectReference Include="..\SSContainer.Domain\SSContainer.Domain.csproj" />
   </ItemGroup>
