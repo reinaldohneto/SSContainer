@@ -103,6 +103,7 @@ namespace APISistema
                 endpoints.MapControllers();
             });
 
+            app.UseMiddleware<AntiXssMiddleware>();
             app.UseAuthentication();
         }
     }
