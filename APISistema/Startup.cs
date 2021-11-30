@@ -39,6 +39,11 @@ namespace APISistema
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "APISistema", Version = "v1" });
             });
 
+            services.AddCors(c =>
+            {
+                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+            });
+
             services.Configure<JwtConfig>(Configuration.GetSection("JwtConfig"));
 
             //Configuration Auth
@@ -94,6 +99,7 @@ namespace APISistema
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseCors("AllowOrigin");
 
             app.UseAuthorization();
 
