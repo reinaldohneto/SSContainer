@@ -9,13 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SSContainer.Domain.Core", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SSContainer.Domain.Services", "SSContainer.Domain.Services\SSContainer.Domain.Services.csproj", "{4CF812D0-D031-4F22-821C-BC63CC31970E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SSContainer.Application", "SSContainer.Application\SSContainer.Application.csproj", "{47A41EA7-774C-42E4-A3AF-D39CA1BA3602}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SSContainer.Infrastructure", "SSContainer.Infrastructure.Data\SSContainer.Infrastructure.csproj", "{5A42077C-025D-4C2A-83AD-FCEFE74A8FD6}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SSContainer.Application.Models", "SSContainer.Application.Models\SSContainer.Application.Models.csproj", "{F350AE3F-9268-489B-8BDF-936015BD6184}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APISistema", "APISistema\APISistema.csproj", "{E9ABCCD7-DC43-4DCE-A368-185E0F55E56C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APISistema", "APISistema\APISistema.csproj", "{E9ABCCD7-DC43-4DCE-A368-185E0F55E56C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,14 +31,6 @@ Global
 		{4CF812D0-D031-4F22-821C-BC63CC31970E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4CF812D0-D031-4F22-821C-BC63CC31970E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4CF812D0-D031-4F22-821C-BC63CC31970E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{47A41EA7-774C-42E4-A3AF-D39CA1BA3602}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{47A41EA7-774C-42E4-A3AF-D39CA1BA3602}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{47A41EA7-774C-42E4-A3AF-D39CA1BA3602}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{47A41EA7-774C-42E4-A3AF-D39CA1BA3602}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5A42077C-025D-4C2A-83AD-FCEFE74A8FD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5A42077C-025D-4C2A-83AD-FCEFE74A8FD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5A42077C-025D-4C2A-83AD-FCEFE74A8FD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5A42077C-025D-4C2A-83AD-FCEFE74A8FD6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F350AE3F-9268-489B-8BDF-936015BD6184}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F350AE3F-9268-489B-8BDF-936015BD6184}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F350AE3F-9268-489B-8BDF-936015BD6184}.Release|Any CPU.ActiveCfg = Release|Any CPU

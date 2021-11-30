@@ -1,9 +1,8 @@
-﻿using SSContainer.Domain.Interfaces;
-using SSContainer.Infrastructure.Data;
+﻿using APISistema;
+using SSContainer.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using APISistema;
 
 namespace SSContainer.Infrastructure.Repositories
 {

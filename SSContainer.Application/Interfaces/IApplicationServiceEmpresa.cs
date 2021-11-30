@@ -9,7 +9,7 @@ namespace SSContainer.Application
 {
     public interface IApplicationServiceEmpresa
     {
-        void Add(AddEmpresaInputModel obj);
+        int? Add(AddEmpresaInputModel obj);
         EmpresaViewModel GetById(int id);
         IEnumerable<EmpresaViewModel> GetAll();
         void Update(int id, UpdateEmpresaInputModel obj);

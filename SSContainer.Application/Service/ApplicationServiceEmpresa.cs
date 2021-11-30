@@ -17,10 +17,12 @@ namespace SSContainer.Application.Service
             _serviceEmpresa = serviceEmpresa;
             _mapperEmpresa = mapperEmpresa;
         }
-        public void Add(AddEmpresaInputModel obj)
+        public int? Add(AddEmpresaInputModel obj)
         {
             var objEmpresa = new Empresa(obj.CNPJ, obj.NomeEmpresa, obj.RazaoSocial, obj.Endereco, obj.Telefone, obj.InscricaoEstadual);
             _serviceEmpresa.Add(objEmpresa);
+
+            return objEmpresa.Id;
         }
 
         public void Dispose()

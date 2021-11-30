@@ -3,22 +3,24 @@ using SSContainer.Application.Models.Models;
 using SSContainer.Domain.Core.Interfaces.Services;
 using System;
 using System.Collections.Generic;
+using AutoMapper;
+using SSContainer.Domain.Entities;
 
 namespace SSContainer.Application.Service
 {
     public class ApplicationServiceProduto : IApplicationServiceProduto, IDisposable
     {
         private readonly IServiceProduto _serviceProduto;
-        private readonly IMapperProduto _mapperProduto;
+        private readonly IMapper _mapperProduto;
 
-        public ApplicationServiceProduto(IServiceProduto serviceProduto, IMapperProduto mapperProduto)
+        public ApplicationServiceProduto(IServiceProduto serviceProduto, IMapper mapperProduto)
         {
             _serviceProduto = serviceProduto;
             _mapperProduto = mapperProduto;
         }
         public void Add(AddProdutoInputModel obj)
         {
-            var objProduto = _mapperProduto.MapperToEntity(obj);
+            var objProduto = new Produto(obj.Nome, obj.CodigoDeBarras, obj.Valor);
             _serviceProduto.Add(objProduto);
         }
 

@@ -3,33 +3,37 @@ using System.Collections.Generic;
 
 namespace SSContainer.Domain.Entities
 {
-  public class Pedido : Base
-  {
-
-    public Pedido(Empresa empresaVendedora, Empresa empresaCompradora)
+    public class Pedido : Base
     {
-      EmpresaVendedora = empresaVendedora;
-      EmpresaCompradora = empresaCompradora;
-      Produtos = new List<Produto>();
+        public Pedido()
+        {
+        }
 
-      DataCadastro = DateTime.Now;
+        public Pedido(Empresa empresaVendedora, Cliente cliente)
+        {
+            EmpresaVendedora = empresaVendedora;
+            Cliente = cliente;
+            Produtos = new List<Produto>();
+
+            DataCadastro = DateTime.Now;
+        }
+        public Empresa EmpresaVendedora { get; private set; }
+        public Cliente Cliente { get; private set; }
+        public ICollection<JoinEmpresas> Pedidos { get; set; }
+        public List<Produto> Produtos { get; set; }
+        public NotaFiscal NotaFiscal { get; set; }
+
+        public void Update(Empresa empresaVendedora, Cliente cliente,
+                           List<Produto> produtos)
+        {
+            EmpresaVendedora = empresaVendedora;
+            Cliente = cliente;
+            Produtos = produtos;
+        }
+
+        public void AddProduto(Produto produto)
+        {
+            Produtos.Add(produto);
+        }
     }
-    public Empresa EmpresaVendedora { get; private set; }
-    public Empresa EmpresaCompradora { get; private set; }
-    public List<Produto> Produtos { get; set; }
-
-
-    public void Update(Empresa empresaVendedora, Empresa empresaCompradora,
-                       List<Produto> produtos)
-    {
-      EmpresaVendedora = empresaVendedora;
-      EmpresaCompradora = empresaCompradora;
-      Produtos = produtos;
-    }
-
-    public void AddProduto(Produto produto)
-    {
-      Produtos.Add(produto);
-    }
-  }
 }

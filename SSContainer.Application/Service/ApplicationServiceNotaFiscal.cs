@@ -3,15 +3,16 @@ using SSContainer.Application.Models.Models;
 using SSContainer.Domain.Core.Interfaces.Services;
 using System;
 using System.Collections.Generic;
+using AutoMapper;
 
 namespace SSContainer.Application.Service
 {
     public class ApplicationServiceNotaFiscal : IApplicationServiceNotaFiscal, IDisposable
     {
         private readonly IServiceNotaFiscal _serviceNotaFiscal;
-        private readonly IMapperNotaFiscal _mapperNotaFiscal;
+        private readonly IMapper _mapperNotaFiscal;
 
-        public ApplicationServiceNotaFiscal(IServiceNotaFiscal serviceNotaFiscal, IMapperNotaFiscal mapperNotaFiscal)
+        public ApplicationServiceNotaFiscal(IServiceNotaFiscal serviceNotaFiscal, IMapper mapperNotaFiscal)
         {
             _serviceNotaFiscal = serviceNotaFiscal;
             _mapperNotaFiscal = mapperNotaFiscal;

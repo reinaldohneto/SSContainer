@@ -1,7 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using SSContainer.Infrastructure.Data;
+﻿using APISistema;
+using Microsoft.EntityFrameworkCore;
 using System;
-using APISistema;
 
 namespace SSContainer.Infrastructure.Repositories
 {

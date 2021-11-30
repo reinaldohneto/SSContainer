@@ -1,7 +1,6 @@
 ﻿using APISistema;
 using SSContainer.Domain.Entities;
 using SSContainer.Domain.Interfaces;
-using SSContainer.Infrastructure.Data;
 using SSContainer.Infrastructure.Repositories;
 
 namespace SSContainer.Infrastructure.Repository.Repositories
