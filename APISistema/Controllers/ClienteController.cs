@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using SSContainer.Application.Models.Models;
 using SSContainer.Domain;
 using SSContainer.Domain.Interfaces;
@@ -12,6 +13,7 @@ namespace APISistema.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ClienteController : ControllerBase
     {
         private readonly IClienteRepository _cliente;
@@ -42,7 +44,14 @@ namespace APISistema.Controllers
         [HttpGet("{id}")]
         public ActionResult<Cliente> GetAll(int id)
         {
-            return Ok(_cliente.GetById(id));
+            var cliente = _cliente.GetById(id);
+
+            if (cliente == null)
+            {
+                cliente = new Cliente();
+            }
+
+            return Ok(cliente);
         }
     }
 }

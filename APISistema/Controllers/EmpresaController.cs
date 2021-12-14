@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SSContainer.Application;
 using SSContainer.Application.Models.Models;
@@ -10,6 +11,7 @@ namespace APISistema.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class EmpresaController : ControllerBase
     {
         private readonly IEmpresaRepository _repository;
@@ -36,13 +38,12 @@ namespace APISistema.Controllers
             
             var empresa = _repository.GetById(id);
 
-            if (empresa != null)
+            if (empresa==null)
             {
-                return Ok(empresa);
+                empresa = new Empresa();
             }
 
-            return NotFound();
-
+            return Ok(empresa);
         }
 
         [HttpGet]

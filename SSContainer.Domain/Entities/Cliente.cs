@@ -14,5 +14,10 @@ namespace SSContainer.Domain
         {
             Nome = nome;
         }
+
+        public Cliente()
+        {
+            
+        }
     }
 }
