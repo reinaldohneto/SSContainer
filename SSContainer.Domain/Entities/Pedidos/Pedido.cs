@@ -21,8 +21,7 @@ namespace SSContainer.Domain.Entities
         public Cliente Cliente { get; private set; }
         public ICollection<JoinEmpresas> Pedidos { get; set; }
         public List<Produto> Produtos { get; set; }
-        public NotaFiscal NotaFiscal { get; set; }
-
+        
         public void Update(Empresa empresaVendedora, Cliente cliente,
                            List<Produto> produtos)
         {

@@ -78,6 +78,7 @@ namespace APISistema
                 .AddEntityFrameworkStores<ApiDbContext>();
 
             services.AddTransient<IEmpresaRepository, RepositoryEmpresa>();
+            services.AddTransient<IClienteRepository, RepositoryCliente>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();

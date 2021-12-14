@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SSContainer.Application;
 using SSContainer.Application.Models.Models;
@@ -28,12 +29,28 @@ namespace APISistema.Controllers
             return Ok();
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public ActionResult<EmpresaViewModel> GetById(int id)
         {
             if (!ModelState.IsValid) return BadRequest();
             
             var empresa = _repository.GetById(id);
+
+            if (empresa != null)
+            {
+                return Ok(empresa);
+            }
+
+            return NotFound();
+
+        }
+
+        [HttpGet]
+        public ActionResult<List<Empresa>> GetAll()
+        {
+            if (!ModelState.IsValid) return BadRequest();
+
+            var empresa = _repository.GetAll();
 
             if (empresa != null)
             {

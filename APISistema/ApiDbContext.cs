@@ -21,14 +21,7 @@ namespace APISistema
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<IdentityUserLogin<string>>()
-                .HasNoKey();
-
-            modelBuilder.Entity<IdentityUserRole<string>>()
-                .HasNoKey();
-
-            modelBuilder.Entity<IdentityUserToken<string>>()
-                .HasNoKey();
+            base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Cliente>()
                 .HasKey(f => f.Id);
@@ -36,16 +29,8 @@ namespace APISistema
             modelBuilder.Entity<Empresa>()
                 .HasKey(f => f.Id);
 
-            modelBuilder.Entity<Produto>()
-                .HasKey(f => f.Id);
-
             modelBuilder.Entity<Pedido>()
                 .HasKey(p => p.Id);
-
-            modelBuilder.Entity<Pedido>()
-                .HasMany(f => f.Produtos)
-                .WithMany(g => g.Pedidos);
-
 
             modelBuilder.Entity<JoinEmpresas>()
                 .HasKey(f=>f.Id);
@@ -60,16 +45,8 @@ namespace APISistema
 
             modelBuilder.Entity<JoinEmpresas>()
                 .HasOne(f => f.Pedido)
-                .WithMany(g => g.Pedidos);
+                .WithMany(g => g.Pedidos) ;
 
-
-            modelBuilder.Entity<NotaFiscal>()
-                .HasKey(f => f.Id);
-
-            modelBuilder.Entity<Pedido>()
-                .HasOne(f => f.NotaFiscal)
-                .WithOne(g => g.Pedido)
-                .HasForeignKey<NotaFiscal>(n => n.PedidoId);
         }
 
         public override int SaveChanges()
