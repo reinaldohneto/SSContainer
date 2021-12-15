@@ -114,6 +114,8 @@ namespace APISistema
 
             services.AddTransient<IEmpresaRepository, RepositoryEmpresa>();
             services.AddTransient<IClienteRepository, RepositoryCliente>();
+            services.AddSingleton<IProcessingStrategy, AsyncKeyLockProcessingStrategy>();
+
 
         }
 
