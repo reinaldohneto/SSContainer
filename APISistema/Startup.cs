@@ -16,6 +16,7 @@ using System.Text;
 using Microsoft.AspNetCore.Mvc;
 using SSContainer.Domain.Interfaces;
 using SSContainer.Infrastructure.Repository.Repositories;
+using System;
 
 [assembly: ApiConventionType(typeof(DefaultApiConventions))]
 namespace APISistema
@@ -68,6 +69,34 @@ namespace APISistema
                 };
             });
 
+            services.AddSwaggerGen(c =>
+            {
+                c.AddSecurityDefinition(
+                "Bearer",
+                new OpenApiSecurityScheme
+                {
+                    In = ParameterLocation.Header,
+                    Description = "Autenticação baseada em Json Web Token (JWT)",
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer",
+                    BearerFormat = "JWT",
+                });
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement{
+                {
+                    new OpenApiSecurityScheme
+                    {
+                        Reference = new OpenApiReference
+                        {
+                            Type = ReferenceType.SecurityScheme,
+                            Id = "Bearer"
+                        }
+                    },
+                    new String [] {}
+                }
+              });
+            });
+
             services.AddDbContext<ApiDbContext>(opt => opt.UseSqlServer(
                 Configuration.GetConnectionString("Sql")));
 
@@ -102,6 +131,7 @@ namespace APISistema
             app.UseRouting();
             app.UseCors("AllowOrigin");
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -110,7 +140,6 @@ namespace APISistema
             });
 
             app.UseMiddleware<AntiXssMiddleware>();
-            app.UseAuthentication();
         }
     }
 }
